@@ -1,0 +1,173 @@
+@font-face {
+  font-family: "Canopee";
+  src: url("fonts/Canopee-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kobe";
+  src: url("fonts/kobe11-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kobe Oblique";
+  src: url("fonts/kobe11-oblique.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Kobe Bold";
+  src: url("fonts/kobe11-bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kobe Black";
+  src: url("fonts/kobe11-black.woff") format("woff");
+  font-weight: bolder;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e3dcc7;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Kobe", Helvetica, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 100px;
+  color: #6d6458;
+}
+
+.site-menu {
+  display: flex;
+}
+
+.menu-item {
+  margin-left: 60px;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 1px solid red; */
+  width: 400px;
+  height: 300px;
+}
+
+.block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.b-1 {
+  background: url("./images/one.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.b-2 {
+  background: url("./images/two.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.b-3 {
+  background: url("./images/three.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.b-4 {
+  background: url("./images/four.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.b-5 {
+  background: url("./images/five.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.b-6 {
+  background: url("./images/six.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.b-7 {
+  background: url("./images/seven.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  bottom: -10rem;
+  background: #e3dcc7;
+  /* background: #393833;  ne olduğunu görmek için */
+}
+
+.title {
+  margin-top: 25rem;
+  text-align: center;
+  font-family: "Canopee";
+  font-size: 10em;
+  color: #F24C4C;
+  overflow: hidden;
+}
+
+.title .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.developer-info {
+    position: absolute;
+    margin-top: -8rem;
+    text-align: center;
+    font-family: "Kobe";
+    font-size: 2rem;
+    color: #393833;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 23rem;
+    padding-right: 23rem;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-style: normal;
+}
+
+.developer-info > .name {
+    font-family: "Kobe";
+    color: #06283D;
+    letter-spacing: 0.3em;
+    font-weight: bold;
+    
+    text-transform: lowercase;
+}
+
+.developer-info > .description {
+    color: #06283D;
+    text-transform: lowercase;
+}

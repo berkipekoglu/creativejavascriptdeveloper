@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Reveal Animation | Berk</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="site-info">Berk</div>
+      <div class="site-menu">
+        <div class="menu-item">projects</div>
+        <div class="menu-item">about</div>
+        <div class="menu-item">contact</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="block b-1"></div>
+      <div class="block b-2"></div>
+      <div class="block b-3"></div>
+      <div class="block b-4"></div>
+      <div class="block b-5"></div>
+      <div class="block b-6"></div>
+      <div class="block b-7"></div>
+    </div>
+
+    <div class="overlay"></div>
+    <div class="developer-info">
+        <span class="name">I make stuff up.</span>
+        <span class="description">Creative Javascript Developer</span>
+    </div>
+    <p class="title">Think. Design. Develop. Launch. Repeat.</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+      var textWrapper = document.querySelector(".title");
+      textWrapper.innerHTML = textWrapper.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
+
+      // title animation
+      anime.timeline().add({
+        targets: ".title .letter",
+        translateY: [-200, 0],
+        easing: "easeOutExpo",
+        duration: 1400,
+        delay: (el, i) => 6500 + 30 * i,
+      });
+
+      // images animation
+      TweenMax.staggerFrom(
+        ".container > .block",
+        2,
+        {
+          y: "110%",
+          ease: Expo.easeInOut,
+          delay: 1,
+        },
+        0.4
+      );
+
+      // scale olmadan önce overlay div'i y ekseninde 100% kadar kaydırılıyor
+      TweenMax.to(".overlay", 0.5, {
+        y: "100%",
+        ease: Expo.easeInOut,
+        delay: 5.2,
+      });
+
+      // image scale oluyor ve boşluğa ilerliyor
+      TweenMax.to(".container", 2, {
+        scale: "2",
+        y: "90%",
+        ease: Expo.easeInOut,
+        delay: 5.5,
+      });
+
+      // navbar animation
+      TweenMax.staggerFrom(".navbar", 1, {
+        opacity: 0,
+        y: -100,
+        ease: Expo.easeInOut,
+        delay: 6
+      }, 0.08);
+
+      //navbar itemlerine power effect uygulanıyor
+      TweenMax.staggerFrom(".site-menu > div", 1, {
+        opacity: 0,
+        y: -100,
+        ease: Power2.easeOut,
+        delay: 6.5
+      }, 0.1);
+
+      anime.timeline().add({
+        targets: ".developer-info > .name",
+        translateY: [-200, 0],
+        easing: "easeInCubic",
+        duration: 1400,
+        delay: (el, i) => 7500 + 30 * i,
+      });
+
+      anime.timeline().add({
+        targets: ".developer-info > .description",
+        translateY: [-200, 0],
+        easing: "easeInCubic",
+        duration: 1400,
+        delay: (el, i) => 7500 + 30 * i,
+      });
+
+
+
+    </script>
+  </body>
+</html>
